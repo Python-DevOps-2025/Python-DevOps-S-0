@@ -33,28 +33,13 @@ def sum_numbers_from_lines(lines: list[str]) -> float:
     total_sum = 0.0
     failed_indices = []
     
-    for i, line in enumerate(lines):
-        # Skip blank lines (empty or whitespace only)
-        if not line.strip():
-            continue
-            
-        try:
-            # Clean the line: remove spaces and commas
-            cleaned_line = line.strip().replace(',', '').replace(' ', '')
-            
-            # Try to parse as float
-            number = float(cleaned_line)
-            total_sum += number
-            
-        except ValueError:
-            # Record the index of failed parse
-            failed_indices.append(i)
+    
     
     # If there were parse failures, raise ParseError
     if failed_indices:
         raise ParseError(failed_indices)
     
-    return total_sum
+    return None
 
 
 if __name__ == "__main__":
