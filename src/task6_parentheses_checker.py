@@ -20,30 +20,10 @@ def is_balanced(s: str) -> bool:
     stack = []
     
     # Mapping of closing to opening brackets
-    bracket_pairs = {')': '(', ']': '[', '}': '{'}
-    opening_brackets = {'(', '[', '{'}
-    closing_brackets = {')', ']', '}'}
     
-    for char in s:
-        if char in opening_brackets:
-            # Push opening bracket onto stack
-            stack.append(char)
-        elif char in closing_brackets:
-            # Check if we have a matching opening bracket
-            if not stack:
-                # No opening bracket to match
-                return False
-            
-            # Pop the last opening bracket
-            last_opening = stack.pop()
-            
-            # Check if it matches the current closing bracket
-            if last_opening != bracket_pairs[char]:
-                return False
-        # Ignore all other characters
     
-    # If stack is empty, all brackets were matched
-    return len(stack) == 0
+
+    return None
 
 
 if __name__ == "__main__":
