@@ -19,39 +19,15 @@ def list_stats(numbers: list[int]) -> dict:
     Raises:
         ValueError: If the list is empty
     """
-    if not numbers:
-        raise ValueError("Cannot calculate statistics for an empty list")
     
-    # Initialize values with first element
-    min_val = numbers[0]
-    max_val = numbers[0]
-    total_sum = 0
-    unique_values = set()
     
     # Iterate through all numbers
-    for num in numbers:
-        # Update min and max
-        if num < min_val:
-            min_val = num
-        if num > max_val:
-            max_val = num
-        
-        # Add to sum
-        total_sum += num
-        
-        # Add to unique set
-        unique_values.add(num)
+    
     
     # Calculate average
-    avg = total_sum / len(numbers)
     
-    return {
-        "min": min_val,
-        "max": max_val,
-        "sum": total_sum,
-        "avg": round(avg, 2),
-        "unique_count": len(unique_values)
-    }
+    
+    return None
 
 
 if __name__ == "__main__":
