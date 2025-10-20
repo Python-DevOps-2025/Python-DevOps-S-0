@@ -17,23 +17,16 @@ def filter_transform(words: list[str], min_len: int) -> list[str]:
     Returns:
         A list of filtered, lowercased, and sorted words
     """
-    filtered_words = []
+    
     
     # Filter words longer than min_len and convert to lowercase
-    for word in words:
-        if len(word) > min_len:
-            filtered_words.append(word.lower())
+    
     
     # Sort alphabetically using a simple sorting algorithm (bubble sort)
     # Note: We're not using built-in sort() as requested to use explicit loops
-    n = len(filtered_words)
-    for i in range(n):
-        for j in range(0, n - i - 1):
-            if filtered_words[j] > filtered_words[j + 1]:
-                # Swap elements
-                filtered_words[j], filtered_words[j + 1] = filtered_words[j + 1], filtered_words[j]
     
-    return filtered_words
+    
+    return None
 
 
 if __name__ == "__main__":
