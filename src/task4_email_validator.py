@@ -21,47 +21,13 @@ def validate_emails(emails: list[str]) -> dict:
     Raises:
         TypeError: If input is not a list
     """
-    if not isinstance(emails, list):
-        raise TypeError("Input must be a list")
     
-    valid_emails = []
-    invalid_emails = []
     
     # Simple email pattern: local@domain with at least one dot in domain
-    # No spaces allowed, exactly one @ symbol
-    email_pattern = r'^[^\s@]+@[^\s@]+\.[^\s@]+$'
     
-    for email in emails:
-        # Check if it's a string first
-        if not isinstance(email, str):
-            invalid_emails.append(email)
-            continue
-            
-        # Check for basic requirements
-        if ' ' in email:  # No spaces
-            invalid_emails.append(email)
-            continue
-            
-        at_count = email.count('@')
-        if at_count != 1:  # Exactly one @
-            invalid_emails.append(email)
-            continue
-            
-        # Use regex for final validation
-        if re.match(email_pattern, email):
-            # Additional check: domain must contain at least one dot
-            domain = email.split('@')[1]
-            if '.' in domain:
-                valid_emails.append(email)
-            else:
-                invalid_emails.append(email)
-        else:
-            invalid_emails.append(email)
+   
     
-    return {
-        "valid": valid_emails,
-        "invalid": invalid_emails
-    }
+    return None
 
 
 if __name__ == "__main__":
